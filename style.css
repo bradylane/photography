@@ -21,10 +21,6 @@ body.page-store nav a.page-store,
 body.page-contact nav a.page-contact {
 	color: var(--accent);
 }
-header a:visited,
-footer a:visited {
-	color: inherit;
-}
 
 header {
 	display: flex;
