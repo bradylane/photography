@@ -10,11 +10,12 @@ body {
 
 header {
 	display: flex;
-	justify-content: space-evenly;
+	justify-content: space-between;
 	align-items: center;
 }
 #site-branding {
 	text-align: center;
+  margin: 8px 16px 0;
 }
 #site-title {
 	font-family: 'Reem Kufi', sans-serif;
@@ -25,6 +26,9 @@ header {
 	margin: 0;
 	font-weight: normal;
 	font-size: 11px;
+}
+nav {
+  margin: 8px 16px 0;
 }
 nav ul {
 	display: flex;
@@ -41,12 +45,12 @@ nav a {
 
 footer {
 	display: flex;
-	justify-content: space-evenly;
+	justify-content: space-between;
 	align-items: center;
 }
 #social {
 	display: flex;
-	margin: 0;
+	margin: 16px;
 	padding: 0;
 }
 #social li {
@@ -56,3 +60,18 @@ footer {
 	display: block;
 	padding: 8px;
 }
+.site-info {
+  margin: 16px;
+}
+
+/*#gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 8px;
+}
+#gallery img {
+  height: 200px;
+  width: auto;
+  margin: 8px;
+}*/

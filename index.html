@@ -5,14 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Brady Lane Photography</title>
 	<link href="https://fonts.googleapis.com/css2?family=Reem+Kufi&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="justifiedGallery.min.css">
+  <script type="text/javascript" src="jquery.justifiedGallery.min.js"></script>
+  <!--<script src="swipebox-master/lib/jquery-2.1.0.min.js"></script>-->
+  <script src="swipebox/js/jquery.swipebox.min.js"></script>
+  <link rel="stylesheet" href="swipebox/css/swipebox.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 	<header>
-		<div id="site-branding">
+		<a id="site-branding" href="./">
 			<h2 id="site-title">Brady Lane</h2>
 			<h6 id="site-tagline">Nature Photography</h6>
-		</div>
+		</a>
 		<nav>
 			<ul>
 				<li><a href="./">Gallery</a></li>
@@ -23,7 +29,7 @@
 		</nav>
 	</header>
 	<main>
-    Gallery
+    <div id="gallery"></div>
 	</main>
 	<footer>
 		<ul id="social">
@@ -36,5 +42,6 @@
 			&copy; 2008-2018 Brady Lane
 		</div>
 	</footer>
+  <script type="text/javascript" src="script.js"></script>
 </body>
 </html>
