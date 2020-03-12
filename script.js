@@ -128,7 +128,7 @@ $('#gallery').justifiedGallery({
     captions : false
 }).on('jg.complete', function () {
     $('.img').swipebox();
-    load();
+    //load();
 });
 
 $(window).scroll(load());
