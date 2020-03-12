@@ -104,10 +104,11 @@ var photos = [
 ];
 
 var loaded = 0;
+var five = loaded + 5;
 
 function load() {
   if($(window).scrollTop() + $(window).height() == $(document).height()) {
-    for (var i = loaded; i < loaded + 5; i++) {
+    for (var i = loaded; i < five; i++) {
       $('#gallery').append('<a class="img" href="photos/' + photos[i] + '.jpg"><img src="photos/' + photos[i] + '-250.jpg" alt="' + photos[i] + '"></a>');
       loaded++;
       if(loaded >= photos.length) break;
