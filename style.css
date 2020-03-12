@@ -7,6 +7,15 @@ body {
 	font-family: 'Roboto', sans-serif;
 	font-size: 16px;
 }
+header a,
+footer a {
+	color: inherit;
+	text-decoration: none;
+}
+header a:visited,
+footer a:visited {
+	color: inherit;
+}
 
 header {
 	display: flex;
@@ -60,18 +69,6 @@ footer {
 	display: block;
 	padding: 8px;
 }
-.site-info {
+#site-info {
   margin: 16px;
 }
-
-/*#gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 8px;
-}
-#gallery img {
-  height: 200px;
-  width: auto;
-  margin: 8px;
-}*/
