@@ -107,12 +107,13 @@ var loaded = 0;
 var five = loaded + 5;
 
 function load() {
-  if($(window).scrollTop() + $(window).height() == $(document).height()) {
+  if(loaded < photos.length && $(window).scrollTop() + $(window).height() > $(document).height() - 300) {
     for (var i = loaded; i < five; i++) {
       $('#gallery').append('<a class="img" href="photos/' + photos[i] + '.jpg"><img src="photos/' + photos[i] + '-250.jpg" alt="' + photos[i] + '"></a>');
       loaded++;
       if(loaded >= photos.length) break;
     }
+    five = loaded + 5;
     $('#gallery').justifiedGallery('norewind');
   }
 }
@@ -122,6 +123,7 @@ for (var i = 0; i < 5; i++) {
   loaded++;
   if(loaded >= photos.length) break;
 }
+five = loaded + 5;
 $('#gallery').justifiedGallery({
     rowHeight : 200,
     lastRow : 'nojustify',
@@ -129,9 +131,9 @@ $('#gallery').justifiedGallery({
     captions : false
 }).on('jg.complete', function () {
     $('.img').swipebox();
-    //load();
+    load();
 });
 
-$(window).scroll(load());
+$(window).scroll(load);
 
 });
