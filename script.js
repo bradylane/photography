@@ -112,9 +112,7 @@ function load() {
       loaded++;
       if(loaded >= photos.length) break;
     }
-    $('#gallery').justifiedGallery('norewind').on('jg.complete', function () {
-      load();
-    });
+    $('#gallery').justifiedGallery('norewind');
   }
 }
 
