@@ -126,6 +126,7 @@ for (var i = 0; i < 5; i++) {
 five = loaded + 5;
 $('#gallery').justifiedGallery({
     rowHeight : 200,
+    maxRowHeight : 250,
     lastRow : 'nojustify',
     margins : 16,
     captions : false
