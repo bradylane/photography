@@ -104,7 +104,7 @@ var photos = [
 var gallery = '';
 
 for(i = 0; i < photos.length; i++) {
-  var photo = '<a class="img" href="photos/' + photos[i] + '.jpg"><img src="photos/' + photos[i] + '.jpg" alt="' + photos[i] + '"></a>'
+  var photo = '<a class="img" href="photos/' + photos[i] + '.jpg"><img src="photos/' + photos[i] + '-250.jpg" alt="' + photos[i] + '"></a>'
   gallery = gallery.concat(photo);
 }
 
