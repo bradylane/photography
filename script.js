@@ -112,8 +112,9 @@ function load() {
       loaded++;
       if(loaded >= photos.length) break;
     }
-    $('#gallery').justifiedGallery('norewind');
-    load();
+    $('#gallery').justifiedGallery('norewind').on('jg.complete', function () {
+      load();
+    });
   }
 }
 
@@ -129,8 +130,8 @@ $('#gallery').justifiedGallery({
     captions : false
 }).on('jg.complete', function () {
     $('.img').swipebox();
+    load();
 });
-load();
 
 $(window).scroll(load());
 
