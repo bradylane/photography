@@ -15,10 +15,10 @@ footer a {
 }
 header a:hover,
 footer a:hover,
-body.gallery nav a.gallery,
-body.about nav a.about,
-body.store nav a.store,
-body.contact nav a.contact {
+body.page-gallery nav a.page-gallery,
+body.page-about nav a.page-about,
+body.page-store nav a.page-store,
+body.page-contact nav a.page-contact {
 	color: var(--accent);
 }
 header a:visited,
