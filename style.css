@@ -24,8 +24,9 @@ body.page-contact nav a.page-contact {
 
 header {
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 	align-items: center;
+	flex-wrap: wrap;
 }
 #site-branding {
 	text-align: center;
@@ -59,8 +60,9 @@ nav a {
 
 footer {
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 	align-items: center;
+	flex-wrap: wrap;
 }
 #social {
 	display: flex;
