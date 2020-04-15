@@ -114,7 +114,7 @@ function load() {
       if(loaded >= photos.length) break;
     }
     five = loaded + 5;
-    $('#gallery').justifiedGallery('norewind');
+    $('#gallery').justifiedGallery();
   }
 }
 
