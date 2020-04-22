@@ -60,7 +60,7 @@ nav a {
 
 .page-store {
 	display: flex;
-	fex-direction: column;
+	flex-direction: column;
 	height: 100vh;
 }
 #store {
