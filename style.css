@@ -58,6 +58,15 @@ nav a {
 	padding: 8px;
 }
 
+.page-store {
+	display: flex;
+	fex-direction: column;
+	height: 100vh;
+}
+#store {
+	flex: 1;
+}
+
 footer {
 	display: flex;
 	justify-content: space-around;
