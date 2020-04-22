@@ -67,6 +67,17 @@ body.page-store {
 	flex: 1;
 }
 
+#contact {
+	padding: 0;
+	margin-left: auto;
+	margin-right: auto;
+	width: max-content;
+	list-style: none;
+}
+#contact a {
+	line-height: 34px;
+}
+
 footer {
 	display: flex;
 	justify-content: space-around;
