@@ -4,98 +4,165 @@
 
 body {
 	--accent: #990505;
+	--background: #0a0a0a;
+	--color: #b1b1b1;
+	background-color: var(--background);
+	color: var(--color);
 	margin: 0;
 	font-family: 'Roboto', sans-serif;
 	font-size: 16px;
 }
-header a,
-footer a {
+
+@media (prefers-color-scheme: light) {
+	body {
+		--background: #ffffff;
+		--color: #333333;
+	}
+}
+
+button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+	font-family: inherit;
+	font-size: inherit;
+}
+
+button:hover,
+a:hover {
+	color: var(--accent);
+}
+
+a {
 	color: inherit;
 	text-decoration: none;
-}
-header a:hover,
-footer a:hover,
-body.page-gallery nav a.page-gallery,
-body.page-about nav a.page-about,
-body.page-store nav a.page-store,
-body.page-contact nav a.page-contact {
-	color: var(--accent);
 }
 
 header {
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-around;
 	align-items: center;
-	flex-wrap: wrap;
+	white-space: nowrap;
+	margin-top: 16px;
+	font-size: 0.9em;
 }
+
 #site-branding {
+	margin: 0 16px;
 	text-align: center;
-  margin: 8px 16px 0;
 }
+
+#site-branding:hover {
+	color: inherit;
+}
+
 #site-title {
 	font-family: 'Reem Kufi', sans-serif;
-	font-size: 24px;
+	font-size: 1.4em;
 	margin: 0;
 }
+
 #site-tagline {
-	margin: 0;
 	font-weight: normal;
-	font-size: 11px;
-}
-nav {
-  margin: 8px 16px 0;
-}
-nav ul {
-	display: flex;
+	font-size: 0.75em;
 	margin: 0;
-	padding: 0;
-}
-nav li {
-	list-style: none;
-}
-nav a {
-	display: block;
-	padding: 8px;
 }
 
-body.page-store {
-	display: flex;
-	flex-direction: column;
-	height: 100vh;
-}
-#store {
-	flex: 1;
-}
-
-#contact {
-	padding: 0;
-	margin-left: auto;
-	margin-right: auto;
-	width: max-content;
-	list-style: none;
-}
-#contact a {
-	line-height: 34px;
-}
-
-footer {
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	flex-wrap: wrap;
-}
 #social {
 	display: flex;
-	margin: 16px;
+	margin: 0 8px;
 	padding: 0;
+	font-size: 1.5em;
 }
+
 #social li {
+	flex: 1;
 	list-style: none;
 }
+
 #social a {
-	display: block;
 	padding: 8px;
 }
-#site-info {
-  margin: 16px;
+
+#photo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background);
+    overflow: auto;
+	display: none;
+}
+
+#outer-wrap {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#photo-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#photo-nav button {
+    display: block;
+	margin: 8px;
+}
+
+#inner-wrap {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+}
+
+#photo img {
+	max-width: 100%;
+	max-height: 100vh;
+	touch-action: manipulation;
+}
+
+#label {
+	margin: 16px;
+}
+
+#artist {
+	font-size: 0.9em;
+}
+
+#title {
+	font-size: 1.3em;
+	line-height: 1.5;
+	font-weight: bold;
+}
+
+#year {
+	font-size: 0.8em;
+}
+
+#links {
+	width: max-content;
+	padding: 0;
+	margin: 16px;
+	margin-top: 32px;
+}
+
+#links li {
+	list-style: none;
+}
+
+#links a {
+	display: block;
+	padding: 4px;
+}
+
+.noscroll {
+	overflow: hidden;
 }
