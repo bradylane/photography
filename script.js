@@ -11,11 +11,15 @@ function openPhoto(name) {
         $('#links').append(`<li><a href="${link.url}" target="_blank">${link.text}</a></li>`);
     });
     $('#photo').fadeIn();
-    $('#inner-wrap').fadeIn();
+    $('#photo img').load(() => {
+        $('#inner-wrap').fadeIn();
+    });
 }
 function closePhoto() {
     $('#photo').fadeOut();
     $('body').removeClass('noscroll');
+    $('#inner-wrap').fadeOut();
+
 }
 function nextPhoto() {
     let i = photos.findIndex(p => p.name == $('#photo').data('name')) + 1;
