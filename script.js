@@ -1,6 +1,9 @@
+let loading = false;
 function openPhoto(name) {
     const photo = photos.find(p => p.name == name);
     if (!photo) return;
+    loading = true;
+    $('#inner-wrap').hide();
     $('#photo').data('name', photo.name);
     $('body').addClass('noscroll');
     $('#photo img').attr({ src: `photos/${photo.title}.jpg`, alt: photo.title });
@@ -11,23 +14,29 @@ function openPhoto(name) {
         $('#links').append(`<li><a href="${link.url}" target="_blank">${link.text}</a></li>`);
     });
     $('#photo').fadeIn();
+    $('#photo-loading').fadeIn();
     $('#photo img').load(() => {
+        $('#photo-loading').hide();
         $('#inner-wrap').fadeIn();
+        loading = false;
     });
 }
 function closePhoto() {
     $('#photo').fadeOut();
     $('body').removeClass('noscroll');
-    $('#inner-wrap').fadeOut();
 
 }
 function nextPhoto() {
+    if (loading) return;
+    loading = true;
     let i = photos.findIndex(p => p.name == $('#photo').data('name')) + 1;
     if (i >= photos.length) i = 0;
     $('#inner-wrap').fadeOut(() => { openPhoto(photos[i].name); });
 
 }
 function previousPhoto() {
+    if (loading) return;
+    loading = true;
     let i = photos.findIndex(p => p.name == $('#photo').data('name')) - 1;
     if (i < 0) i = photos.length - 1;
     $('#inner-wrap').fadeOut(() => { openPhoto(photos[i].name); });
@@ -37,7 +46,7 @@ document.querySelector('#photo img').addEventListener('contextmenu', e => {
     e.preventDefault();
 });
 
-document.onkeydown = function(e) {
+document.onkeydown = function (e) {
     if ($('#photo').is(':hidden')) return;
     switch (e.key) {
         case 'ArrowLeft':
@@ -80,6 +89,7 @@ $(document).ready(function () {
         maxRowHeight: 250,
         lastRow: 'nojustify',
         margins: 16,
+        border: 0,
         captions: false
     }).on('jg.complete', function () {
         load();
