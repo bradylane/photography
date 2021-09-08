@@ -10,7 +10,7 @@ layout: default
             {% else %}
                 {% assign previous = site.posts[0] %}
             {% endif %}
-            <a class="icon-left" href="{{previous.url}}" title="Previous Photo"></a>
+            <a id="previous-photo" class="icon-left" href="{{previous.url}}" title="Previous Photo"></a>
             <a href="/" title="All Photos">Gallery</a>
             {% if page.next %}
                 {% assign next = page.next %}
@@ -18,7 +18,7 @@ layout: default
                 {% assign last lastPostIndex = site.posts | size | minus: 1 %}
                 {% assign next = site.posts[lastPostIndex] %}
             {% endif %}
-            <a class="icon-right" href="{{next.url}}" title="Next Photo"></a>
+            <a id="next-photo" class="icon-right" href="{{next.url}}" title="Next Photo"></a>
         </nav>
         <div id="center-wrap">
             <div id="photo-loading" class="ellipsis">
@@ -27,7 +27,7 @@ layout: default
                 <div></div>
                 <div></div>
             </div>
-            <div id="inner-wrap">
+            <div id="inner-wrap" onload="$('#inner-wrap').fadeIn();" onbeforeunload="$('#inner-wrap').fadeOut();">
                 <img src="/photos/{{ page.title }}.jpg" alt="{{ page.title }}" />
                 <div id="label">
                     <div id="artist">Brady Lane</div>
