@@ -27,6 +27,9 @@ layout: default
                 <div></div>
                 <div></div>
             </div>
+            <script>
+                $('#photo-loading').fadeIn();
+            </script>
             <div id="inner-wrap">
                 <img src="/photos/{{ page.title }}.jpg" alt="{{ page.title }}" onload="$('#photo-loading').hide(); $('#inner-wrap').fadeIn();" />
                 <div id="label">
@@ -41,4 +44,4 @@ layout: default
         </div>
     </div>
 </div>
-<script src="/post.js?v=2"></script>
+<script src="/post.js?v=3"></script>
