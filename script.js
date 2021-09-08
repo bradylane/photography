@@ -47,6 +47,7 @@ document.querySelector('#photo img').addEventListener('contextmenu', e => {
 });
 
 document.onkeydown = function (e) {
+    return;
     if ($('#photo').is(':hidden')) return;
     switch (e.key) {
         case 'ArrowLeft':
@@ -67,11 +68,12 @@ $(document).ready(function () {
     let five = loaded + 5;
 
     function load() {
-        if (loaded < photos.length && $(window).scrollTop() + $(window).height() > $(document).height() - 300) {
+        if (loaded < posts.length && $(window).scrollTop() + $(window).height() > $(document).height() - 300) {
             for (var i = loaded; i < five; i++) {
-                $('#gallery').append(`<a onclick="openPhoto('${photos[i].name.replaceAll("'", "\\'")}');"><img src="photos/${photos[i].title}-250.jpg" alt="${photos[i].title}"></a>`);
+                //$('#gallery').append(`<a onclick="openPhoto('${photos[i].name.replaceAll("'", "\\'")}');"><img src="photos/${photos[i].title}-250.jpg" alt="${photos[i].title}"></a>`);
+                $('#gallery').append(`<a href="${posts[i].url}"><img src="/photos/${posts[i].title}-250.jpg" alt="${posts[i].title}"></a>`);
                 loaded++;
-                if (loaded >= photos.length) break;
+                if (loaded >= posts.length) break;
             }
             five = loaded + 5;
             $('#gallery').justifiedGallery();
@@ -79,9 +81,10 @@ $(document).ready(function () {
     }
 
     for (var i = 0; i < 5; i++) {
-        $('#gallery').append(`<a onclick="openPhoto('${photos[i].name.replaceAll("'", "\\'")}');"><img src="photos/${photos[i].title}-250.jpg" alt="${photos[i].title}"></a>`);
+        //$('#gallery').append(`<a onclick="openPhoto('${photos[i].name.replaceAll("'", "\\'")}');"><img src="photos/${photos[i].title}-250.jpg" alt="${photos[i].title}"></a>`);
+        $('#gallery').append(`<a href="${posts[i].url}"><img src="/photos/${posts[i].title}-250.jpg" alt="${posts[i].title}"></a>`);
         loaded++;
-        if (loaded >= photos.length) break;
+        if (loaded >= posts.length) break;
     }
     five = loaded + 5;
     $('#gallery').justifiedGallery({

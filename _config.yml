@@ -1,0 +1,11 @@
+domain: bradylane.photography
+url: https://bradylane.photography
+title: Brady Lane Photography
+permalink: /:title
+defaults:
+    -
+        scope:
+            path: "" # an empty string here means all files in the project
+            type: "posts"
+        values:
+            layout: "post"
