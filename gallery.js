@@ -13,8 +13,9 @@ $(document).ready(function () {
             }
             five = loaded + 5;
             $('#gallery').justifiedGallery();
-        } else if (scrollTop) {
-            $(window).scrollTop(scrollTop);
+        } else {
+            if (scrollTop) $(window).scrollTop(scrollTop);
+            $('#gallery').fadeIn();
         }
     }
 

@@ -93,6 +93,10 @@ main {
 	margin: 0 16px 16px;
 }
 
+#gallery {
+	display: none;
+}
+
 .noscroll {
 	overflow: hidden;
 }
