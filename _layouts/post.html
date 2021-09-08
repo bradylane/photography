@@ -2,23 +2,42 @@
 layout: default
 ---
 
-<nav id="photo-nav">
-    {% if page.previous %}
-        {% assign previous = page.previous %}
-    {% else %}
-        {% assign previous = site.posts[0] %}
-    {% endif %}
-    <a class="prev" href="{{previous.url}}">&laquo;</a>
-    <a href="/">Gallery</a>
-    {% if page.next %}
-        {% assign next = page.next %}
-    {% else %}
-        {% assign last lastPostIndex = site.posts | size | minus: 1 %}
-        {% assign next = site.posts[lastPostIndex] %}
-    {% endif %}
-    <a class="next" href="{{next.url}}">&raquo;</a>
-</nav>
-<img src="/photos/{{ page.title }}.jpg" alt="{{ page.title }}" />
-<p>{{ page.title }} - {{ page.date }}</p>
-
-{{ content }}
+<div id="photo">
+    <div id="outer-wrap">
+        <nav id="photo-nav">
+            {% if page.previous %}
+                {% assign previous = page.previous %}
+            {% else %}
+                {% assign previous = site.posts[0] %}
+            {% endif %}
+            <a class="icon-left" href="{{previous.url}}" title="Previous Photo"></a>
+            <a href="/" title="All Photos">Gallery</a>
+            {% if page.next %}
+                {% assign next = page.next %}
+            {% else %}
+                {% assign last lastPostIndex = site.posts | size | minus: 1 %}
+                {% assign next = site.posts[lastPostIndex] %}
+            {% endif %}
+            <a class="icon-right" href="{{next.url}}" title="Next Photo"></a>
+        </nav>
+        <div id="center-wrap">
+            <div id="photo-loading" class="ellipsis">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div id="inner-wrap">
+                <img src="/photos/{{ page.title }}.jpg" alt="{{ page.title }}" />
+                <div id="label">
+                    <div id="artist">Brady Lane</div>
+                    <div id="title">{{ page.title }}</div>
+                    <div id="year">{{ page.date | date: "%Y" }}</div>
+                </div>
+                <div id="links">
+                    {{ content }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
