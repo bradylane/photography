@@ -5,23 +5,23 @@ layout: default
 <div id="photo">
     <div id="outer-wrap">
         <nav id="photo-nav">
-            {% if page.previous %}
-                {% assign previous = page.previous %}
-            {% else %}
-                {% assign previous = site.posts[0] %}
-            {% endif %}
-            <a id="previous-photo" class="icon-left" href="{{ previous.url }}" title="Previous Photo" onclick="event.preventDefault(); $('#inner-wrap').fadeOut(() => {window.location = '{{ previous.url }}';});"></a>
-            <a id="all-photos" href="/" title="All Photos" onclick="event.preventDefault(); $('#inner-wrap').fadeOut(() => {window.location = '/';});">Gallery</a>
             {% if page.next %}
                 {% assign next = page.next %}
             {% else %}
                 {% assign last lastPostIndex = site.posts | size | minus: 1 %}
                 {% assign next = site.posts[lastPostIndex] %}
             {% endif %}
-            <a id="next-photo" class="icon-right" href="{{ next.url }}" title="Next Photo" onclick="event.preventDefault(); $('#inner-wrap').fadeOut(() => {window.location = '{{ next.url }}';});"></a>
+            <a id="previous-photo" class="icon-left" href="{{ next.url }}" title="Previous Photo" onclick="event.preventDefault(); $('#inner-wrap').fadeOut(() => {window.location = '{{ next.url }}';});"></a>
+            <a id="all-photos" href="/" title="All Photos" onclick="event.preventDefault(); $('#inner-wrap').fadeOut(() => {window.location = '/';});">Gallery</a>
+            {% if page.previous %}
+                {% assign previous = page.previous %}
+            {% else %}
+                {% assign previous = site.posts[0] %}
+            {% endif %}
+            <a id="next-photo" class="icon-right" href="{{ previous.url }}" title="Next Photo" onclick="event.preventDefault(); $('#inner-wrap').fadeOut(() => {window.location = '{{ previous.url }}';});"></a>
         </nav>
         <div id="center-wrap">
-            <div id="photo-loading" class="ellipsis" onload="$('#photo-loading').fadeIn();">
+            <div id="photo-loading" class="ellipsis">
                 <div></div>
                 <div></div>
                 <div></div>
