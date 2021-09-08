@@ -42,9 +42,11 @@ function previousPhoto() {
     $('#inner-wrap').fadeOut(() => { openPhoto(photos[i].name); });
 }
 
+/*
 document.querySelector('#photo img').addEventListener('contextmenu', e => {
     e.preventDefault();
 });
+*/
 
 document.onkeydown = function (e) {
     return;
