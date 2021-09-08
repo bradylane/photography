@@ -12,7 +12,7 @@ layout: default
                 {% assign next = site.posts[lastPostIndex] %}
             {% endif %}
             <a id="previous-photo" class="icon-left" href="{{ next.url }}" title="Previous Photo" onclick="event.preventDefault(); $('#inner-wrap').fadeOut(() => {window.location = '{{ next.url }}';});"></a>
-            <a id="all-photos" href="/" title="All Photos" onclick="event.preventDefault(); $('#inner-wrap').fadeOut(() => {window.location = '/';});">Gallery</a>
+            <a id="all-photos" href="/" title="All Photos" onclick="event.preventDefault(); $('#photo').fadeOut(() => {window.location = '/';});">Gallery</a>
             {% if page.previous %}
                 {% assign previous = page.previous %}
             {% else %}

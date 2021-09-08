@@ -2,29 +2,31 @@
 layout: default
 title: Brady Lane Photography
 ---
-
-<header>
-	<a id="site-branding" href="/">
-		<h4 id="site-title">Brady Lane</h4>
-		<h6 id="site-tagline">Nature Photography</h6>
-	</a>
-	<ul id="social">
-		<li><a class="icon-500px" title="500px" href="https://500px.com/bradylane" target="_blank"></a></li>
-		<li><a class="icon-instagram" title="Instagram" href="https://www.instagram.com/bradylane.photography"
-				target="_blank"></a></li>
-		<li><a class="icon-facebook" title="Facebook" href="https://www.facebook.com/bradylane.photography"
-				target="_blank"></a></li>
-		<li><a class="icon-flickr" title="Flickr" href="https://www.flickr.com/photos/bradyplane" target="_blank"></a>
-		</li>
-	</ul>
-</header>
-<main>
-	<div id="gallery"></div>
-</main>
+<div id="gallery-wrap">
+	<header>
+		<a id="site-branding" href="/">
+			<h4 id="site-title">Brady Lane</h4>
+			<h6 id="site-tagline">Nature Photography</h6>
+		</a>
+		<ul id="social">
+			<li><a class="icon-500px" title="500px" href="https://500px.com/bradylane" target="_blank"></a></li>
+			<li><a class="icon-instagram" title="Instagram" href="https://www.instagram.com/bradylane.photography"
+					target="_blank"></a></li>
+			<li><a class="icon-facebook" title="Facebook" href="https://www.facebook.com/bradylane.photography"
+					target="_blank"></a></li>
+			<li><a class="icon-flickr" title="Flickr" href="https://www.flickr.com/photos/bradyplane"
+					target="_blank"></a>
+			</li>
+		</ul>
+	</header>
+	<main>
+		<div id="gallery"></div>
+	</main>
+</div>
 <script>
 	const posts = []
 	{% for post in site.posts %}
-		posts.push({ title: "{{ post.title }}", url: '{{ post.url }}' })
+	posts.push({ title: "{{ post.title }}", url: '{{ post.url }}' })
 	{% endfor %}
 </script>
-<script src="/gallery.js?v=8"></script>
+<script src="/gallery.js?v=9"></script>
