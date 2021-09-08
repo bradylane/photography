@@ -53,7 +53,7 @@ title: Brady Lane Photography
 <script>
 	const posts = []
 	{% for post in site.posts %}
-		posts.push({ title: '{{ post.title }}', url: '{{ post.url }}' })
+		posts.push({ title: "{{ post.title }}", url: '{{ post.url }}' })
 	{% endfor %}
 </script>
 <script src="photos.js?v=1"></script>
