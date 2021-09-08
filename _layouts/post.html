@@ -27,8 +27,8 @@ layout: default
                 <div></div>
                 <div></div>
             </div>
-            <div id="inner-wrap" onload="$('#inner-wrap').fadeIn();" onbeforeunload="$('#inner-wrap').fadeOut();">
-                <img src="/photos/{{ page.title }}.jpg" alt="{{ page.title }}" />
+            <div id="inner-wrap" onbeforeunload="$('#inner-wrap').fadeOut();">
+                <img src="/photos/{{ page.title }}.jpg" alt="{{ page.title }}" onload="$('#inner-wrap').fadeIn();" />
                 <div id="label">
                     <div id="artist">Brady Lane</div>
                     <div id="title">{{ page.title }}</div>
