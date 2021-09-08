@@ -137,6 +137,7 @@ main {
 
 #photo-loading {
     position: absolute;
+	display: none;
 }
 
 #inner-wrap {

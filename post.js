@@ -1,3 +1,5 @@
+$('#photo-loading').fadeIn();
+
 document.onkeydown = event => {
     switch (event.key) {
         case 'ArrowLeft':
