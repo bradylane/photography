@@ -10,15 +10,15 @@ layout: default
             {% else %}
                 {% assign previous = site.posts[0] %}
             {% endif %}
-            <a id="previous-photo" class="icon-left" href="{{previous.url}}" title="Previous Photo"></a>
-            <a href="/" title="All Photos">Gallery</a>
+            <a id="previous-photo" class="icon-left" href="{{ previous.url }}" title="Previous Photo" onclick="event.preventDefault(); $('#inner-wrap').fadeOut(() => {window.loacation = '{{ previous.url }}';});"></a>
+            <a href="/" title="All Photos" onclick="event.preventDefault();$('#photo').fadeOut(() => {window.loacation = '/';});">Gallery</a>
             {% if page.next %}
                 {% assign next = page.next %}
             {% else %}
                 {% assign last lastPostIndex = site.posts | size | minus: 1 %}
                 {% assign next = site.posts[lastPostIndex] %}
             {% endif %}
-            <a id="next-photo" class="icon-right" href="{{next.url}}" title="Next Photo"></a>
+            <a id="next-photo" class="icon-right" href="{{ next.url }}" title="Next Photo" onclick="event.preventDefault(); $('#inner-wrap').fadeOut(() => {window.loacation = '{{ next.url }}';});"></a>
         </nav>
         <div id="center-wrap">
             <div id="photo-loading" class="ellipsis">
