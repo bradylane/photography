@@ -13,6 +13,8 @@ $(document).ready(function () {
             }
             five = loaded + 5;
             $('#gallery').justifiedGallery();
+        } else if (scrollTop) {
+            $(window).scrollTop(scrollTop);
         }
     }
 
@@ -37,12 +39,6 @@ $(document).ready(function () {
         scrollTop = null;
         load();
     });
-
-    let scrollTop = sessionStorage.getItem('scrollTop');
-    if (scrollTop) {
-        $(window).scrollTop(scrollTop);
-        sessionStorage.removeItem('scrollTop');
-    }
 
     $(window).on('beforeunload', () => {
         sessionStorage.setItem('scrollTop', $(window).scrollTop());
