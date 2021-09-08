@@ -121,9 +121,9 @@ main {
     align-items: center;
 }
 
-#photo-nav button {
+#photo-nav a {
     display: block;
-	margin: 8px;
+	padding: 8px;
 }
 
 #center-wrap {

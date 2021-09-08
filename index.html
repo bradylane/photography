@@ -20,35 +20,6 @@ title: Brady Lane Photography
 </header>
 <main>
 	<div id="gallery"></div>
-	<!--
-		<div id="photo">
-			<div id="outer-wrap">
-				<div id="photo-nav">
-					<button id="previous-photo" class="icon-left" title="Previous Photo"
-						onclick="previousPhoto();"></button>
-					<button id="close-photo" title="All Photos" onclick="closePhoto();">Gallery</button>
-					<button id="next-photo" class="icon-right" title="Next Photo" onclick="nextPhoto();"></button>
-				</div>
-				<div id="center-wrap">
-					<div id="photo-loading" class="ellipsis">
-						<div></div>
-						<div></div>
-						<div></div>
-						<div></div>
-					</div>
-					<div id="inner-wrap">
-						<img>
-						<div id="label">
-							<div id="artist">Brady Lane</div>
-							<div id="title"></div>
-							<div id="year"></div>
-						</div>
-						<ul id="links"></ul>
-					</div>
-				</div>
-			</div>
-		</div>
-		-->
 </main>
 <script>
 	const posts = []
@@ -56,5 +27,4 @@ title: Brady Lane Photography
 		posts.push({ title: "{{ post.title }}", url: '{{ post.url }}' })
 	{% endfor %}
 </script>
-<script src="photos.js?v=1"></script>
-<script src="script.js?v=3"></script>
+<script src="/gallery.js?v=4"></script>
