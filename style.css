@@ -94,7 +94,7 @@ main {
 }
 
 #gallery {
-	display: none;
+	opacity: 0;
 }
 
 .noscroll {

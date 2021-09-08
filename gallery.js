@@ -15,7 +15,7 @@ $(document).ready(function () {
             $('#gallery').justifiedGallery();
         } else {
             if (scrollTop) $(window).scrollTop(scrollTop);
-            $('#gallery').fadeIn();
+            $('#gallery').animate({opacity:1});
         }
     }
 
