@@ -10,15 +10,15 @@ layout: default
             {% else %}
                 {% assign previous = site.posts[0] %}
             {% endif %}
-            <a id="previous-photo" class="icon-left" href="{{ previous.url }}" title="Previous Photo" onclick="event.preventDefault(); $('#inner-wrap').fadeOut(() => {window.loacation = '{{ previous.url }}';});"></a>
-            <a href="/" title="All Photos" onclick="event.preventDefault();$('#photo').fadeOut(() => {window.loacation = '/';});">Gallery</a>
+            <a id="previous-photo" class="icon-left" href="{{ previous.url }}" title="Previous Photo" onclick="event.preventDefault(); $('#inner-wrap').fadeOut(() => {window.location = '{{ previous.url }}';});"></a>
+            <a href="/" title="All Photos" onclick="event.preventDefault();$('#photo').fadeOut(() => {window.location = '/';});">Gallery</a>
             {% if page.next %}
                 {% assign next = page.next %}
             {% else %}
                 {% assign last lastPostIndex = site.posts | size | minus: 1 %}
                 {% assign next = site.posts[lastPostIndex] %}
             {% endif %}
-            <a id="next-photo" class="icon-right" href="{{ next.url }}" title="Next Photo" onclick="event.preventDefault(); $('#inner-wrap').fadeOut(() => {window.loacation = '{{ next.url }}';});"></a>
+            <a id="next-photo" class="icon-right" href="{{ next.url }}" title="Next Photo" onclick="event.preventDefault(); $('#inner-wrap').fadeOut(() => {window.location = '{{ next.url }}';});"></a>
         </nav>
         <div id="center-wrap">
             <div id="photo-loading" class="ellipsis">
@@ -27,7 +27,7 @@ layout: default
                 <div></div>
                 <div></div>
             </div>
-            <div id="inner-wrap" onbeforeunload="$('#inner-wrap').fadeOut(); event.returnValue = '';">
+            <div id="inner-wrap">
                 <img src="/photos/{{ page.title }}.jpg" alt="{{ page.title }}" onload="$('#inner-wrap').fadeIn();" />
                 <div id="label">
                     <div id="artist">Brady Lane</div>
