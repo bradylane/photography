@@ -10,25 +10,25 @@ layout: default
             {% else %}
                 {% assign previous = site.posts[0] %}
             {% endif %}
-            <a id="previous-photo" class="icon-left" href="{{ previous.url }}" title="Previous Photo"></a>
-            <a id="all-photos" href="/" title="All Photos">Gallery</a>
+            <a id="previous-photo" class="icon-left" href="{{ previous.url }}" title="Previous Photo" onclick="event.preventDefault(); $('#inner-wrap').fadeOut(() => {window.location = '{{ previous.url }}';});"></a>
+            <a id="all-photos" href="/" title="All Photos" onclick="event.preventDefault(); $('#inner-wrap').fadeOut(() => {window.location = '/';});">Gallery</a>
             {% if page.next %}
                 {% assign next = page.next %}
             {% else %}
                 {% assign last lastPostIndex = site.posts | size | minus: 1 %}
                 {% assign next = site.posts[lastPostIndex] %}
             {% endif %}
-            <a id="next-photo" class="icon-right" href="{{ next.url }}" title="Next Photo"></a>
+            <a id="next-photo" class="icon-right" href="{{ next.url }}" title="Next Photo" onclick="event.preventDefault(); $('#inner-wrap').fadeOut(() => {window.location = '{{ next.url }}';});"></a>
         </nav>
         <div id="center-wrap">
-            <div id="photo-loading" class="ellipsis">
+            <div id="photo-loading" class="ellipsis" onload="$('#photo-loading').fadeIn();">
                 <div></div>
                 <div></div>
                 <div></div>
                 <div></div>
             </div>
             <div id="inner-wrap">
-                <img src="/photos/{{ page.title }}.jpg" alt="{{ page.title }}" />
+                <img src="/photos/{{ page.title }}.jpg" alt="{{ page.title }}" onload="$('#photo-loading').hide(); $('#inner-wrap').fadeIn();" />
                 <div id="label">
                     <div id="artist">Brady Lane</div>
                     <div id="title">{{ page.title }}</div>
@@ -41,4 +41,4 @@ layout: default
         </div>
     </div>
 </div>
-<script src="/post.js?v=1"></script>
+<script src="/post.js?v=2"></script>
