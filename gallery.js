@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+    $('#gallery-loading').fadeIn();
+
     let loaded = 0;
     let five = loaded + 5;
     let scrollTop = sessionStorage.getItem('scrollTop');
