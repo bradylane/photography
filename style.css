@@ -93,6 +93,19 @@ main {
 	margin: 0 16px 16px;
 }
 
+#gallery-loading {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	display: none;
+}
+
 #gallery-wrap {
 	opacity: 0;
 }

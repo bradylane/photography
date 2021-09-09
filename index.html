@@ -2,6 +2,17 @@
 layout: default
 title: Brady Lane Photography
 ---
+<div id="gallery-loading" class="loading-wrap">
+	<div class="ellipsis">
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+</div>
+<script>
+	$('#gallery-loading').fadeIn();
+</script>
 <div id="gallery-wrap">
 	<header>
 		<a id="site-branding" href="/">
@@ -29,4 +40,4 @@ title: Brady Lane Photography
 	posts.push({ title: "{{ post.title }}", url: '{{ post.url }}' })
 	{% endfor %}
 </script>
-<script src="/gallery.js?v=9"></script>
+<script src="/gallery.js?v=10"></script>
