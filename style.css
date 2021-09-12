@@ -106,11 +106,13 @@ main {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
 	display: none;
+}
+
+#gallery-loading .ellipsis {
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 #gallery-wrap {
